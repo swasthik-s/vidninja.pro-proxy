@@ -1,0 +1,23 @@
+{
+  "name": "hls-proxy-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for HLS stream proxying with datacrate-style URL encoding",
+  "main": "worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "hls",
+    "proxy",
+    "streaming"
+  ],
+  "author": "VidNinja",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.114.12"
+  }
+}

@@ -1,0 +1,29 @@
+name = "hls-proxy-worker"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# KV namespace for session storage
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+# Custom domain routing (configure in Cloudflare dashboard)
+# Route: vidninja.pro/cdn-hls1/*
+
+# Environment variables (optional)
+[vars]
+# MAX_SESSION_AGE = "3600000"  # 1 hour in milliseconds
+# CORS_ORIGINS = "*"
+
+# Worker settings
+[build]
+command = ""
+
+[env.production]
+name = "hls-proxy-worker"
+route = "vidninja.pro/cdn-hls1/*"
+
+[env.staging]
+name = "hls-proxy-worker-staging"
